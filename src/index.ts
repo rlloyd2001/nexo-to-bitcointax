@@ -39,10 +39,10 @@ const transformNexo = (input: string[][], year: string): { values: string[][]; u
   });
   const usdInterest = nexoUsdInterest(input);
   input = nexoNonUsdRows(input);
-  const retval = [['Date', 'Action', 'Symbol', 'Volume']];
+  const retval = [['Date', 'Action', 'Account', 'Symbol', 'Volume']];
   for (let i = 0; i < input.length; i += 1) {
     const row = input[i];
-    retval.push([nexoToBitcoinTaxDate(row[6]), 'INCOME', row[2], row[3]]);
+    retval.push([nexoToBitcoinTaxDate(row[6]), 'INCOME', 'Nexo', row[2], row[3]]);
   }
   return { values: retval, usdInterest };
 };
