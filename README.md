@@ -12,9 +12,9 @@ Filters out USD and provides a yearly total of USD interest.
 ## Getting Started
 *   ```npm install```
 *   ```npm run build```
-*   ```npm run start -- <crowdnode.csv file> <output.csv> <year>```
+*   ```npm run start -- <nexo_transactions.csv file> <nexo-output.csv> <year>```
 
 # Example
 ```bash
-npm run build && npm run start -- nexo_transactions.csv output.csv 2020
+npm run build && npm run start -- nexo_transactions.csv nexo-output.csv 2020
 ```
