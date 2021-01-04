@@ -1,9 +1,13 @@
 # Nexo.io To BitcoinTax
 
-Download transactions .csv from nexo.io to use with this script.
-Not tested much, use at your own risk.  
+This script has saved me many hours of data entry for interest earned.
+What this script does is take a .csv file from nexo.io and create a .csv file that can be
+uploaded into the Income section of bitcoin.tax.
 
-Filters out USD and provides a yearly total of USD interest.
+Download transactions .csv from nexo.io to use with this script.
+Not tested much. Review your generated .csv before uploading to bitcoin.tax to make sure this is what you are needing.
+
+Filters out USD and prints a yearly total in the console of USD interest.
 
 ## Prerequisites
 *   NodeJs (v14.x)
