@@ -32,10 +32,10 @@ const nexoNonUsdRows = (input: string[][]): string[][] => {
 
 const transformNexo = (input: string[][], year: string): { values: string[][]; usdInterest: number } => {
   input = input.filter((row) => {
-    return row[3].indexOf(year) > -1;
+    return row[6].indexOf(year) > -1;
   });
   input = input.filter((row) => {
-    return row[0] === 'Interest' || row[0] === 'Dividend';
+    return row[1] === 'Interest' || row[1] === 'Dividend';
   });
   const usdInterest = nexoUsdInterest(input);
   input = nexoNonUsdRows(input);
@@ -62,7 +62,7 @@ async function main(): Promise<void> {
   const outputData = await stringifyCsv(outputCsv);
   logger.info('main', { outputData });
   fs.writeFileSync(outputFName, outputData);
-  logger.verbose(`USD Interest for ${year}: ${usdInterest.toFixed(2)}`);
+  logger.info(`USD Interest for ${year}: $${usdInterest.toFixed(2)}`);
 }
 
 main().then(() => {

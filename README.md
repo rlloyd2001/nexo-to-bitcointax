@@ -16,5 +16,5 @@ Filters out USD and provides a yearly total of USD interest.
 
 # Example
 ```bash
-npm run start -- nexo_transactions.csv output.csv 2020
+npm run build && npm run start -- nexo_transactions.csv output.csv 2020
 ```
