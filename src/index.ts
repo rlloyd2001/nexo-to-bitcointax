@@ -32,7 +32,7 @@ const nexoNonUsdRows = (input: string[][]): string[][] => {
 
 const transformNexo = (input: string[][], year: string): { values: string[][]; usdInterest: number } => {
   input = input.filter((row) => {
-    return row[6].indexOf(year) > -1;
+    return row[7].indexOf(year) > -1;
   });
   input = input.filter((row) => {
     return row[1] === 'Interest' || row[1] === 'Dividend';
@@ -42,7 +42,7 @@ const transformNexo = (input: string[][], year: string): { values: string[][]; u
   const retval = [['Date', 'Action', 'Account', 'Symbol', 'Volume']];
   for (let i = 0; i < input.length; i += 1) {
     const row = input[i];
-    retval.push([nexoToBitcoinTaxDate(row[6]), 'INCOME', 'Nexo', row[2], row[3]]);
+    retval.push([nexoToBitcoinTaxDate(row[7]), 'INCOME', 'Nexo', row[2], row[3]]);
   }
   return { values: retval, usdInterest };
 };
